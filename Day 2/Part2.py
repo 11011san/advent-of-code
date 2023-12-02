@@ -8,7 +8,7 @@ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green"""
 
 input_split = input.split("\n")
 
-f = open("input2.txt", "r")
+f = open("input1.txt", "r")
 
 result = 0
 

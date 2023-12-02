@@ -36,13 +36,13 @@ def convert(value):
 
 # Correct: 55652
 
-f = open("input2.txt", "r")
+f = open("input1.txt", "r")
 output = 0
 
 
 def findLast(param, a):
-    for i in range(len(a),-1,-1):
-        found1 = re.findall(param,a[0:i])
+    for i in range(len(a), -1, -1):
+        found1 = re.findall(param, a[0:i])
         if found1:
             return found1[0]
 
@@ -50,7 +50,7 @@ def findLast(param, a):
 for a in f:
     found = re.findall(r"(one|two|three|four|five|six|seven|eight|nine|\d)", a)
     b = (convert(found[0]) * 10 + convert(findLast(r"(one|two|three|four|five|six|seven|eight|nine|\d)$", a)))
-    #print(str(b) + " - " + a.replace("\n", ""))
+    # print(str(b) + " - " + a.replace("\n", ""))
     output += b
 
 print(output)
