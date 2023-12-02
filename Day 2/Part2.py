@@ -13,7 +13,6 @@ f = open("input2.txt", "r")
 result = 0
 
 for a in f:
-    game = int(re.search(r"Game (\d+):", a).group(1))
     red = max([int(i) for i in re.findall(r"(\d+) red", a)])
     green = max([int(i) for i in re.findall(r"(\d+) green", a)])
     blue = max([int(i) for i in re.findall(r"(\d+) blue", a)])
