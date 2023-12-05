@@ -19,6 +19,7 @@ for row in f:
     seen = set()
     dupes = [x for x in num if x in seen or seen.add(x)]
     cards.append(len(dupes))
+
 card_dupes = [1] * len(cards)
 for index, num in enumerate(cards):
     if num != 0:
