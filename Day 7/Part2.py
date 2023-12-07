@@ -37,9 +37,9 @@ def convert(cards):
 
 def compare(hand1, hand2):
     card1 = hand1["cards"]
-    dup1 = hand1["dup"]
+    dup1 = hand1["type"]
     card2 = hand2["cards"]
-    dup2 = hand2["dup"]
+    dup2 = hand2["type"]
 
     if dup1 == dup2:
         for i in range(0, 5):
@@ -55,7 +55,7 @@ def compare(hand1, hand2):
         return 1
 
 
-def duplicates(cards):
+def evaluate_type(cards):
     dups = [0] * 14
     for card in cards:
         dups[card - 1] += 1
@@ -83,7 +83,7 @@ for row in input:
     formatted.append({
         "bid": int(split[1]),
         "cards": cards,
-        "dup": duplicates(cards)
+        "type": evaluate_type(cards)
     })
 print(formatted)
 
