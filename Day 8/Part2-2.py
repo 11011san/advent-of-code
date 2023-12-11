@@ -16,12 +16,10 @@ input = """LR
 22Z = (22B, 22B)
 XXX = (XXX, XXX)"""
 
+input = open("input1.txt", "r").read().strip()
+
 input = input.split("\n")
 
-with open("input1.txt", "r") as file_in:
-    input = []
-    for line in file_in:
-        input.append(line)
 
 steps = input[0].replace("\n", "")
 nodes = {}

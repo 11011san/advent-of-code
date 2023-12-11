@@ -208,6 +208,18 @@ for y, row in enumerate(input):
             print(Fore.GREEN + char, end="")
             print(Style.RESET_ALL, end="")
         elif (x, y) in positions:
+            if char == "F":
+                char = "┌"
+            elif char == "7":
+                char = "┐"
+            elif char == "J":
+                char = "┘"
+            elif char == "L":
+                char = "└"
+            elif char == "|":
+                char = "│"
+            elif char == "-":
+                char = "─"
             print(Fore.RED + char, end="")
             print(Style.RESET_ALL, end="")
         elif char == "I":
@@ -217,7 +229,8 @@ for y, row in enumerate(input):
             print(Back.BLUE + char, end="")
             print(Style.RESET_ALL, end="")
         else:
-            print(char, end="")
+            print(Back.RED + char, end="")
+            print(Style.RESET_ALL, end="")
     print("")
 # 365 low
 # 365
