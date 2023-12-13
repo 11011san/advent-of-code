@@ -12,16 +12,13 @@ input = open("input1.txt", "r").read().strip()
 input = input.split("\n")
 output = 0
 
-mem = {}
-
-
+mem={}
 def locations(spring_map, spring_numbers, middle):
     global mem
     key = f"{spring_map}|{spring_numbers}|{middle}"
     if key not in mem:
         mem[key] = locations_comput(spring_map, spring_numbers, middle)
     return mem[key]
-
 
 def locations_comput(spring_map, spring_numbers, middle):
     if len(spring_numbers) == 0:
@@ -70,7 +67,7 @@ def locations_comput(spring_map, spring_numbers, middle):
                             spring_map[1:], spring_numbers, False)
             else:
                 if len(spring_numbers) == 1:
-                    if re.search(r"(#)", spring_map[1:]):
+                    if re.search(r"(#)",spring_map[1:]):
                         return 0
                     else:
                         return 1
@@ -96,7 +93,7 @@ for row in input:
     spring_map = spring_map_org
     spring_numbers = spring_numbers_org.copy()
     for i in range(0, 4):
-        spring_map += "?" + spring_map_org
+        spring_map += "?"+spring_map_org
         spring_numbers += spring_numbers_org
     t = locations(spring_map, spring_numbers, False)
     mem = {}
