@@ -54,6 +54,7 @@ def find(part, flow):
         if rule[1] == ">":
             if part[rule[0]][0] > rule[2]:
                 result += find(part, rule[3])
+                part[rule[0]] = (0, 0)
             elif part[rule[0]][1] < rule[2]:
                 continue
             else:
@@ -64,6 +65,7 @@ def find(part, flow):
         elif rule[1] == "<":
             if part[rule[0]][1] < rule[2]:
                 result += find(part, rule[3])
+                part[rule[0]] = (0, 0)
             elif part[rule[0]][0] > rule[2]:
                 continue
             else:
