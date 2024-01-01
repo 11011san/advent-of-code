@@ -1,12 +1,6 @@
-import copy
-import json
+
 import re
-import heapq
-import sys
-import uuid
-import sympy as sp
 import aoc_lube
-from mpmath.libmp.backend import xrange
 import networkx as nx
 
 input = """jqt: rhn xhk nvd
@@ -21,11 +15,11 @@ ntq: jqt hfx bvb xhk
 nvd: lhk
 lsr: lhk
 rzs: qnr cmg lsr rsh
-frs: qnr lhk lsr"""
+frs: qnr lhk lsr""".splitlines()
 
-input = open("input1.txt", "r").read().strip()
+# input = open("input1.txt", "r").read().splitlines()
+input = aoc_lube.fetch(2023,25).splitlines()
 
-input = input.split("\n")
 
 
 G = nx.DiGraph()
