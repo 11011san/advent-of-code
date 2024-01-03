@@ -100,11 +100,10 @@ def part1():
 
 def part2():
     root = build()
-    total = 70000000
     target = 30000000 - (70000000 - root.size)
-    all = root.part2()
-    all.sort(key=operator.attrgetter('size'))
-    for dir in all:
+    all_dir = root.part2()
+    all_dir.sort(key=operator.attrgetter('size'))
+    for dir in all_dir:
         if dir.size > target:
             return dir.size
     return
